@@ -2559,10 +2559,9 @@ tests:
   steps:
     cluster_profile: ibmcloud-qe
     env:
-      E2E_RUN_TAGS: '@amd64 and @ibmcloud-ipi and @network-ovnkubernetes and not @fips'
-      TAG_VERSION: '@4.15'
+      TEST_SCENARIOS: "46677"
     test:
-    - chain: openshift-e2e-test-qe
+    - ref: openshift-extended-test
     workflow: cucushift-installer-rehearse-ibmcloud-ipi-workers-rhel8
 - as: ibmcloud-ipi-workers-rhel8-f14-ui
   cron: 23 6 12,27 * *
